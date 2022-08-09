@@ -34,8 +34,8 @@ export default {
 
     const login = () => {
       signInWithEmailAndPassword(getAuth(), email.value, password.value)
-        .then(data => {
-          console.log("successfully logged in", data)
+        .then(() => {
+          console.log("successfully logged in")
           router.push('/todoApp')
         }).catch(err => {
           console.log(err)

@@ -28,6 +28,7 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 import { useRouter } from "vue-router"
 import TodoTable from '@/components/TodoTable.vue'
 
+
 export default {
     name: "TodoApp",
     setup() {
@@ -37,11 +38,8 @@ export default {
         onMounted(() => {
             auth = getAuth();
             onAuthStateChanged(auth, (user) => {
-                console.log(isLoggedIn.value);
                 if (user) {
-                    console.log(user);
                     isLoggedIn.value = true;
-                    console.log(isLoggedIn.value);
                 }
                 else {
                     isLoggedIn.value = false;
